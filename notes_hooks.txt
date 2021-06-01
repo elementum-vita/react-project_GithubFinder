@@ -1,0 +1,34 @@
+new hooks : 
+useContext
+
+useReducer
+
+
+
+
+-----------
+Alternative to redux => context API
+to mangage app level state in small and medium size app
+
+
+In SRC new folder => context
+different ressources should be broken up in differents contexts
+
+
+
+
+
+
+
+////////////////////////////////////////////////
+src/context : 
+    github (folder)
+        githubContext.js    // initializing a new context => see file
+        githubReducer.js    // any changes made to the 'states' are going to be in here => see file
+        GithubState.js      // our actions => see file
+    types.js                // relevant to all the files in 'src/context/github'. 
+                                types = variation of strings to call to change a state within the reducer
+
+GithubState: include all our actions
+we call an action, which make a request to github, then get a response
+then we dispatch a type back to our Reducer
