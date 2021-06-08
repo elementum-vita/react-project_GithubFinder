@@ -32,3 +32,50 @@ src/context :
 GithubState: include all our actions
 we call an action, which make a request to github, then get a response
 then we dispatch a type back to our Reducer
+-----
+GithubContext:
+1. bring it the conxtext (GithubContext.Provider) in with 'uppercase' G 
+    import GithubContext from '../../context/github/githubContext';
+2. initialise it with 'lowercase' g :
+    const githubContext = useContext(GithubContext);
+then you can use them in the object where you initialise it
+
+
+
+common work flow : 
+...
+src / 
+    components...
+    context
+        xContext.js 
+        xReducer.js
+        XState.js
+...
+
+AlertState.js 
+Our actions here will always 'dispatch' an 'object' to the 'Reducer', with a 'type' and a payload (here, in a object with a message and a type)
+  // Set Alert
+  const setAlert = (msg, type) => {
+    dispatch({
+      type: SET_ALERT,
+      payload: { msg, type }
+    });
+
+
+
+for SET_ALERT, we'll return the payload, the Alert object { msg, type }
+and the RMOVE_ALERT, back to null
+
+export default(state, action) => {
+  switch(action.type) {
+    case SET_ALERT:
+      return action.payload;
+    case REMOVE_ALERT:
+        return null;
+    default: 
+      return state;
+  }
+};
+
+
+
