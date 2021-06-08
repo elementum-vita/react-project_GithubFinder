@@ -8,11 +8,11 @@ const RepoItem = ({ repo }) => {
                 <a href={repo.html_url}>{repo.name}</a>
             </h3>
         </div>
-    )
+    );
 };
 
 RepoItem.propTypes = {
     repo: PropTypes.object.isRequired
 };
 
-export default RepoItem
+export default RepoItem;
