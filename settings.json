@@ -1,0 +1,36 @@
+{
+  "workbench.colorTheme": "Solarized Light",
+  "workbench.editor.enablePreview": false,
+
+  "editor.formatOnSave": true,
+  "emmet": {
+    "showExpandedAbbreviation": "always",
+    "triggerExpansionOnTab": true,
+    "includeLanguages": {
+      "javascript": "javascriptreact",
+    }
+  }, 
+  "launch": {    
+          "configurations": [],
+          "compounds": []
+  },
+  "prettier": {
+    "jsxSingleQuote": true,
+    "semi": false,
+    "trailingComma": "es5",
+    "useEditorConfig": true,
+    "useTabs": true,
+    "tabWidth": 2,
+  },
+  "php.validate.executablePath": "C:\\xamp\\php\\php.exe",
+  "window.zoomLevel": -1,
+  
+  "markdown.preview.linkify": false,
+  "[jsonc]": {
+
+      "editor.quickSuggestions": {
+          "strings": true
+      },
+      "editor.suggest.insertMode": "replace"
+  },
+}
