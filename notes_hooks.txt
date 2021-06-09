@@ -77,5 +77,52 @@ export default(state, action) => {
   }
 };
 
+TO DEPLOY :: 
+Netlify
+CLI
 
+---
+we don't want to use those on production mode, so...
+REACT_APP_GITHUB_CLIENT_ID=''
+REACT_APP_GITHUB_CLIENT_SECRET='' 
 
+in GithubState, below the import but before the const GithubState...
+
+  let githubClientID;
+  let githubClientSecret;
+
+  if (process.env.NODE_ENV !== 'production') {
+    githubClientID = process.env.REACT_APP_GITHUB_CLIENT_ID
+    githubClientSecret = process.env.REACT_APP_GITHUB_CLIENT_SECRET
+  } else {
+    githubClientID = process.env.GITHUB_CLIENT_ID
+    githubClientSecret = process.env.GITHUB_CLIENT_SECRET
+  }
+....
+
+______________
+stop the server Ctrl+C
+______________
+create a Netlify account
+create a file (in roots) netlify.toml
+in which : 
+[build]
+  publish="build" // production build
+
+then
+PS C:\Users\RLAB\Desktop\Roxanne\react_refactoring> npm i -g netlify-cli
+PS C:\Users\RLAB\Desktop\Roxanne\react_refactoring> netlify init
+...
+
+In Netlify: 
+In deploys settings / Environment / Environment variables (so that it is store on the server, thus more secure)
+  Key : GITHUB_CLIENT_ID          Value: ...
+  Key : GITHUB_CLIENT_SECRET      Value: ...
+
+back to the termninal: 
+npm run build
+netlify deploy--prod
+
+___________________________________________________________________
+////////////////////////////////////////////////////////////////
+context API, useReducer, useContext, useState, useEffect
